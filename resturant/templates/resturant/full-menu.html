@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+    Menu - Ted's Bar and Cafe
+{% endblock %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'resturant/post.css' %}"/>
+    <link rel="stylesheet" href="{% static 'resturant/full-menu.css' %}">
+{% endblock %}
+
+{% block body %} 
+    <section id="full-menu">
+        <h2>Menu</h2>
+        <ul>
+            {% for item in full_menu %}
+                {% include "resturant/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

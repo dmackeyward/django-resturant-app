@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Login - Ted's Bar and Cafe
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'resturant/login.css' %}">
+{% endblock %}
+
+{% block body %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <h1>Login</h1>
+  <div>
+    <label>Email</label>
+    <input type="text" name="email">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" name="password">
+  </div>
+  <input type="submit" value="Submit" class="btn btn-secondary" />
+  <br /><br />
+  <p>Don't have an account? Register <a href="/register_user">here</a></p>
+</form>
+{% endblock %}
+
+{% if form.errors %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  There was an error with your form...
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}

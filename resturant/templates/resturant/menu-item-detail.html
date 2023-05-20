@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+    {{ name }} - Ted's Bar and Cafe
+{% endblock %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'resturant/menu-item-detail.css' %}"/>
+{% endblock %}
+
+{% block body %} 
+
+    <section id="menu-item-detail">
+        <h2>{{ name }}</h2>
+        <br>
+        {{mini_description|linebreaks}}
+        {{full_description|linebreaks}}
+        <article>
+            <img src="{{ image_url }}" alt = "{{ post.name }}" />
+        </article>
+    </section>
+
+
+
+{% endblock %}

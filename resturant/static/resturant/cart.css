@@ -1,0 +1,56 @@
+.row {
+    padding: 150px 150px 0px 150px;
+}
+
+.col-lg-12 {
+    padding: 2rem;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+}
+
+.cart-row{
+	display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ececec;
+}
+
+#pushdown {
+    margin-top: 1rem;
+}
+
+#quantitytext {
+    position: relative;
+    bottom: 5px;
+}
+
+.row-image {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.quantity {
+    display: inline-block;
+    margin: auto;
+    padding-right:15px;
+}
+
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+
+
+
+
+
+
+

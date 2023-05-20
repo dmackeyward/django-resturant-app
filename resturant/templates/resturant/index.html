@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+    Ted's Bar and Cafe
+{% endblock %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'resturant/post.css' %}"/>
+    <link rel="stylesheet" href="{% static 'resturant/index.css' %}"/>
+{% endblock %}
+
+{% block body %} 
+
+    <!-- welcome section -->
+    <section id="welcome">
+        <header>
+            <img src="{% static 'resturant/images/cafe.png' %}" alt="Ted's Bar and Cafe" />
+            <h1>Ted's Bar and Cafe</h1>
+        </header>
+        <p>Welcome to Ted's Bar and Cafe!<br>Please see our menu for great food and drinks</p>
+    </section>
+
+    <!-- homepage items -->
+    <section id="homepage-items">
+        <h2>This weeks specials</h2>
+
+        <ul>
+            {% for item in on_special_items %}
+                {% include "resturant/includes/post.html" %}
+            {% endfor %}
+        </ul>
+
+    </section>
+
+{% endblock %}

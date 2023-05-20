@@ -1,0 +1,16 @@
+{% load static %}
+
+<li>
+    <article class="menu-item">
+        <a href="{% url 'menu-item-detail-page' slug=item.slug %}">
+            <img src="{{ item.image_url }}" alt = "{{ post.name }}" />
+            <div class="menu__content">
+                <h3> {{ item.name }} </h3>
+                <p> {{ item.mini_description }} </p>
+                <p> {{ item.id }} </p>
+            </div>
+        </a>
+        <button data-item={{item.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+    </article>
+</li>
+

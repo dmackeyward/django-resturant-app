@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %} 
+    Registration - Ted's Bar and Cafe
+{% endblock %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'resturant/register.css' %}">
+{% endblock %}
+
+{% block body %} 
+  <form action="{% url 'register_user' %}" method="POST">
+    {% csrf_token %} 
+	<h1>Register</h1>
+	{{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-secondary" />
+	<br/><br/><p>Have an account? Login <a href="/login">here</a></p>
+  </form>
+{% endblock %}
+
+
+{% if form.errors %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  There was an error with your form...
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endif %}

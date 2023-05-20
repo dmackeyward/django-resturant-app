@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+    Contact Us - Ted's Bar and Cafe
+{% endblock %}
+
+{% block css_files %} 
+    <link rel="stylesheet" href="{% static 'resturant/contactus.css' %}"/>
+{% endblock %}
+
+{% block body %} 
+
+<div class="container">
+    <h1>Contact Us</h1>
+    <div class="flex-container">
+        <div class="contactus">
+            <form method="post" action=".">
+                {% csrf_token %} 
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+            <br>
+        </div>
+        <div >
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.655452548605!2d174.76198831529135!3d-36.85072697993817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47e5388915ef%3A0x48a613bf09ef0c3f!2sFather%20Ted&#39;s%20Original%20Irish%20Pub!5e0!3m2!1sen!2snz!4v1680995270136!5m2!1sen!2snz" width="600" height="450" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="ourdetails">
+        <label for="our_address">Our address: 1 Wellesley Street West</label><br/>
+        <label for="our_email">Our email: teds@gmail.com</label><br/>
+        <label for="our_phone">Our Phone: 021xxx</label><br/>
+    </div>
+</div>
+
+{% endblock %}
