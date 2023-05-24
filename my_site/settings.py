@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 DEBUG = True
-ALLOWED_HOSTS = ['django-env.eba-nnsimkx7.ap-southeast-2.elasticbeanstalk.com', '*']
+ALLOWED_HOSTS = ['django-resturant-app-9-dev.ap-southeast-2.elasticbeanstalk.com', '*']
 
 
 # Application definition
