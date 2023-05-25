@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['django-resturant-app-11-dev.ap-southeast-2.elasticbeanstalk.co
 
 INSTALLED_APPS = [
     'resturant',
+    'my_site',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
