@@ -21,7 +21,6 @@ for (i = 0; i < updateBtns.length; i++) {
 function updateUserOrder(itemId, action){
     console.log("User is logged in, sending data..")
 
-    print("HERE1")
     var url = "/update_item/"
 
     fetch(url, {

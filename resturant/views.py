@@ -109,6 +109,14 @@ def register_user(request):
         form = RegisterUserForm(request.POST)
         if form.is_valid():
             user = form.save()
+            
+            
+            
+            new_user, created = Customer.objects.get_or_create(user=user)
+            
+            
+            
+            
             login(request, user)
             messages.success(request, ("Registration Successful!"))
             return redirect('/home')
