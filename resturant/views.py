@@ -4,11 +4,11 @@ from django.http import Http404, JsonResponse
 from django.contrib import messages
 from django.db.models import Avg
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 import json
 import datetime
-
 from .models import *
 from .forms import RegisterUserForm, ContactForm
 
@@ -109,14 +109,7 @@ def register_user(request):
         form = RegisterUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            
-            
-            
             new_user, created = Customer.objects.get_or_create(user=user)
-            
-            
-            
-            
             login(request, user)
             messages.success(request, ("Registration Successful!"))
             return redirect('/home')
@@ -175,7 +168,7 @@ def cart(request):
     return render(request, "resturant/cart.html", context) 
   
   
-  
+
 def checkout(request):
     
     if request.user.is_authenticated:
