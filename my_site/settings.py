@@ -99,14 +99,19 @@ if 'RDS_DB_NAME' in os.environ:
     
 else:
     DATABASES = {
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.postgresql',
+        #     'NAME': 'resturant_items',
+        #     'USER': 'postgres',
+        #     'PASSWORD': config('POSTGRES_PASSWORD'),
+        #     'HOST': 'localhost',
+        #     'PORT': '5432',
+        # }
+
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'resturant_items',
-            'USER': 'postgres',
-            'PASSWORD': config('POSTGRES_PASSWORD'),
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
     }
 
 # Password validation
